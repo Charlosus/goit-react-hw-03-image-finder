@@ -1,3 +1,7 @@
 export const Button = ({ onClick }) => {
-  return <button onClick={onClick}>Load More</button>;
+  return (
+    <button className="Button" onClick={onClick}>
+      Load More
+    </button>
+  );
 };

@@ -1,50 +1,50 @@
-# Basic React Setup with Vite and ESLint
+# 📸 React Image Finder
 
-This is a starter React project using Vite as the build tool and ESLint for code linting.
+A simple image search app built with React and the Pixabay API. Developed as part of the GoIT React homework #3.
 
-## Included Packages
+## 🔍 Features
 
-- **react** and **react-dom** — React library and DOM renderer
-- **vite** — Fast build tool and dev server
-- **eslint** — Code linter to keep code clean and consistent
-- **@babel/eslint-parser** — ESLint parser to support modern JS and JSX syntax
-- **eslint-plugin-react** — React specific linting rules
-- **eslint-plugin-react-hooks** — Linting for React Hooks rules
-- **eslint-plugin-react-refresh** — Support for React Fast Refresh in ESLint
-- **@vitejs/plugin-react** — Vite plugin for React support
-- **prettier** — Code formatter (optional)
+- Search for images using the Pixabay API
+- Responsive image gallery with pagination (`Load More`)
+- Modal window with a larger image preview
+- Loading spinner during API requests
+- Clean styling with a prebuilt CSS file
 
-## Getting Started
+## 🛠️ Technologies Used
 
-1. Clone the repo:
-<pre> 
-git clone https://github.com/Charlosus/basic-setup.git   
-cd basic-setup
-</pre>
-Install dependencies:
+- React (useState, useEffect)
+- Axios
+- Pixabay API
+- React Spinners (Loader)
+- CSS
 
-<pre> npm install  </pre>
+## 🚀 Getting Started
 
-Start the development server:
+1. Clone the repository:
+   git clone https://github.com/Charlosus/goit-react-hw-03-image-finder.git
 
-<pre> npm run dev  </pre>
+2. Navigate to the project directory:
+   cd goit-react-hw-03-image-finder
 
-Run ESLint to check for code issues:
+3. Install the dependencies:
+   npm install
 
-<pre> npm run lint  </pre>
+4. Start the development server:
+   npm run dev
 
-Build the project for production:
+## 🔗 API
 
-<pre> npm run build  </pre>
+This project uses the free [Pixabay API](https://pixabay.com/api/docs/). The API key is included directly in the code for educational purposes.
 
-Preview the production build:
+## 📁 Project Structure
 
-<pre> npm run preview  </pre>
-
-Notes
-ESLint config is in eslint.config.js using the flat config system.
-
-React Fast Refresh is enabled via ESLint plugin.
-
-Adjust .eslintrc or eslint.config.js if you want to customize linting rules.
-
+src/
+├── App.jsx
+├── SearchBar.jsx
+├── Gallery.jsx
+├── GalleryItem.jsx
+├── Modal.jsx
+├── Button.jsx
+├── Loader.jsx
+├── style.css
+└── ...

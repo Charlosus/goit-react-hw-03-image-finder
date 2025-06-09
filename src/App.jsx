@@ -7,6 +7,7 @@ import { Gallery } from './Gallery';
 import { Button } from './Button';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { Modal } from './Modal';
+import './styles.css';
 
 function App() {
   const [searchInput, setInput] = useState('');
