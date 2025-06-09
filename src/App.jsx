@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from 'react';
+import './App.css';
+import axios from 'axios';
+import { SearchBar } from './SearchBar';
+import { useEffect, useState } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [searchInput, setInput] = useState('');
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  const API_KEY = '50495832-52e00f4195b6d2cb1ef4fba52';
+  const BASE_URL = 'https://pixabay.com/api/';
+  async function fetchImages() {
+    try {
+      const response = await axios.get(BASE_URL, {
+        params: {
+          key: API_KEY,
+          q: searchInput,
+          image_type: 'photo',
+          orientation: 'horizontal',
+          safesearch: true,
+        },
+      });
+      console.log('Odpowiedź z Pixabay:', response.data);
+    } catch (error) {
+      console.error('Błąd podczas pobierania danych z Pixabay:', error.message);
+    }
+  }
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    const value = evt.target.elements.search.value.trim();
+    if (!value) return;
+    setInput(value);
+  };
+
+  useEffect(() => {
+    if (!searchInput) return;
+    fetchImages(searchInput);
+  }, [searchInput]);
+  return <SearchBar onSubmit={handleSubmit} />;
 }
 
-export default App
+export default App;
