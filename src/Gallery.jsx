@@ -1,15 +1,10 @@
-export const Gallery = (images) => {
+import { GalleryItem } from './GalleryItem';
+export const Gallery = ({ images }) => {
   return (
     <div>
       <ul>
         {images.map((image) => {
-          return (
-            <GalleryItem
-              key={image.src}
-              src={image.src}
-              alt={image.alt}
-            ></GalleryItem>
-          );
+          return <GalleryItem key={image.key} image={image}></GalleryItem>;
         })}
       </ul>
     </div>
