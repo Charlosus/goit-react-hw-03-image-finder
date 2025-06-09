@@ -38,6 +38,7 @@ This project uses the free [Pixabay API](https://pixabay.com/api/docs/). The API
 
 ## 📁 Project Structure
 
+```plaintext
 src/
 ├── App.jsx
 ├── SearchBar.jsx
@@ -48,3 +49,4 @@ src/
 ├── Loader.jsx
 ├── style.css
 └── ...
+```
